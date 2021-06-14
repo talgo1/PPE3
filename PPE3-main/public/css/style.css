@@ -1,0 +1,268 @@
+/* @import fonts from fonts.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+body{
+	background-color: #277da1;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: 700;
+}
+
+.login_container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.login_form {
+	width: 100%;
+	max-width: 500px;
+	background-color: #fff;
+	padding: 50px 40px;
+	border-radius: 30px;
+	background: #fff;
+	border: solid 8px #e6e6e6;
+}
+
+.login_form h1 {
+	text-align: center;
+	margin: 48px 0;
+	font-size: 36px;
+	color: rgb(44, 44, 44);
+}
+
+.logo_login {
+	position: absolute;
+	height: 22vh;
+	width: 22vh;
+	top: 0px;
+	border-radius: 50%;
+	background: #277da1;
+	padding: 10px;
+	text-align: center;
+}
+
+.logo_login img {
+	height: 20vh;
+	width: 20vh;
+	border-radius: 50%;
+}
+
+.text_login {
+	margin-bottom: 12px;
+	position: relative;
+}
+
+.text_login input {
+	width: 100%;
+	height: 70px;
+	border: none;
+	background-color: #e2e2e2;
+	border-radius: 30px;
+	color: #333;
+	font-size: 1.2em;
+	font-weight: 700;
+	padding: 24px 60px 10px 30px;
+	outline: none;
+}
+
+.placeholder {
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	position: absolute;
+	line-height: 70px;
+	top: -20px;
+	left: 20px;
+	color: #4b4b4b;
+	user-select: none;
+	pointer-events: none;
+}
+
+.show_password {
+	position: absolute;
+	top: 18px;
+	right: 15px;
+	color: #4b4b4b;
+	font-size: 15px;
+	cursor: pointer;
+	font-weight: 700;
+	padding: 7px;
+	border-radius: 5px;
+	background-color: #9bbcca;
+}
+
+.show_password:hover {
+	color: #111;
+	background-color: #78b4ce;
+}
+
+.button {
+	display: block;
+	width: 200px;
+	height: 60px;
+	margin: 50px auto;
+	background-color: #277da1;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 700;
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	outline: none;
+}
+.button:hover {
+	opacity: .8;
+}
+
+.button:disabled {
+	background-color: transparent;
+	color: #ddd;
+	border: 2px solid;
+}
+
+.login_form a {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	color: #555;
+	text-transform: uppercase;
+	font-weight: 500;
+	margin-bottom: 8px;
+	transition: .2s linear;
+}
+
+.login_form a:hover {
+	color: #111;
+}
+
+.login_error{	
+	text-align: center;
+	background-color: #be7678;
+	border-radius: 20px;
+	color: #ff0000;
+	font-weight: 600;
+	padding: 10px;
+}
+
+
+/* COMPTRE RENDU FORM */ 
+
+.presentation {
+	margin-top: 20px;
+	display: flex;
+}
+
+.medicament_field {
+	width: 50%;
+	margin-right: 10px;
+}
+
+.quantite_field{
+	width: 30%;
+}
+
+.remove_field, .add_field{
+	color: #fff;
+	padding: 12px;
+	border: 0px solid;
+	border-radius: 5px;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.remove_field {
+	display: flex;
+	align-self: flex-end;
+	margin-bottom: 10px;
+	background-color: #d11a2a;
+}
+
+.add_field {
+	background-color: #00681f;
+}
+
+.remove_field:hover, .add_field:hover {
+	color: #fff;
+	opacity: 0.85;
+}
+
+
+
+/* LISTES */
+.content-table {
+	background: #fff;
+	border-collapse: collapse;
+	margin: 25px auto;
+	font-size: 0.9rem;
+	border-radius: 15px 15px 0 0;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
+}
+
+.content-table thead tr th{
+	height: 90px;
+	color: #fff;
+	font-size: 1.1rem;
+	font-weight: 600;
+	text-align: left;
+}
+
+.content-table th, .content-table td {
+	padding: 12px 15px;
+}
+
+.content-table tbody tr {
+	border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+	background: #f3f3f3;
+}
+
+
+/* NAVBAR */
+.nav-link{
+	color: #a3a3a3 !important;
+	font-weight: 600;
+	margin: 0 8px;
+}
+
+.nav-link:hover{
+	color: #fff !important;
+}
+
+.nav-disconnect{
+	text-decoration: none;
+	color: #fff;
+}
+
+.nav-disconnect:hover{
+	text-decoration: none;
+	color: #ccc;
+}
+
+
+/* CHARTS*/
+
+.chart-container {
+	text-align: center;
+	margin-top: 15px;
+	padding: 20px 40px;
+	background-color: #fff;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 0 12px rgba(0, 0, 0, 0.55);
+}

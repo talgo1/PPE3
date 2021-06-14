@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <h1 class="text-center mt-5">Affichage des visiteurs</h1>
+    <table class="content-table">
+        <thead>
+            <tr class="bg-dark">                   
+                <th>Nom</th></div>
+                <th>Prénom</th>
+                <th>Adresse</th>
+                <th>Code Postal</th>
+                <th>Ville</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for visiteur in liste_visiteurs %}
+                <tr>
+                    <td>{{ visiteur.nom }}</td>
+                    <td>{{ visiteur.prenom }}</td>
+                    <td>{{ visiteur.adresse }}</td>
+                    <td>{{ visiteur.CodePostal }}</td>
+                    <td>{{ visiteur.ville }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}  

@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <h1 class="text-center mt-5">Mes comptes-rendus</h1>
+    <table class="content-table">
+        <thead>
+            <tr class="bg-dark">                   
+                <th rowspan="2">Date</th>
+                <th rowspan="2">Praticien</th>
+                <th rowspan="2">Motif</th>
+                <th rowspan="2">Bilan</th>
+                <th colspan="2">Médicaments présentés</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for compteRendu in listeCompteRendu %}
+                {% set taille = compteRendu.presentation|length + 1 %}
+                <tr>
+                    <td rowspan="{{ taille }}">{{ compteRendu.DateVisite|date("d/m/Y") }}</td>
+                    <td rowspan="{{ taille }}">{{ compteRendu.praticien.nom }} {{ compteRendu.praticien.prenom }}</td>
+                    <td rowspan="{{ taille }}">{{ compteRendu.motif }}</td>
+                    <td rowspan="{{ taille }}">{{ compteRendu.bilan }}</td>
+                    <td><strong>Nom commercial</strong></td>
+                    <td><strong>Quantité offerte</strong></td>
+                </tr>    
+                 
+                    {% for presentation in compteRendu.presentation %}  
+                    <tr>                       
+                        <td>{{ presentation.medicament.nomCommercial }}</td>
+                        <td>{{ presentation.quantiteOfferte }}</td>
+                    </tr>   
+                    {% endfor %}
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}  

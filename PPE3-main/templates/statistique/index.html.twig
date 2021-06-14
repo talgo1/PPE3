@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Statistiques{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <h1 class="text-center mt-4">Statistiques</h1>
+        <div class="col-sm-12 col-md-6">
+            <div class="chart-container">
+                <h5>Médicaments présentés, par mois, en 2021</h5>
+                <canvas id="medicamentsProposes" width="800" height="400"></canvas>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+            <div class="chart-container">
+                <h5>Médicaments offerts, par mois, en 2021</h5>
+                <canvas id="medicamentsOfferts" width="800" height="400"></canvas>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-2"></div>
+        <div class="col-sm-12 col-md-8">
+            <div class="chart-container">
+                <h5>Coût médicaments offerts, par mois, en 2021</h5>
+                <canvas id="coutMedicamentsOfferts" width="800" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+	{% include "inc/charts.html.twig" %}
+
+{% endblock %}

@@ -1,0 +1,144 @@
+<script type='text/javascript'>
+
+var labels = [
+	'Janv',
+	'Fév',
+	'Mars',
+	'Avril',
+	'Mai',
+	'Juin',
+	'Juil',
+	'Août',
+	'Sept',
+	'Oct',
+	'Nov',
+	'Déc'
+];
+
+
+//------------------------------ Médicaments présentés
+
+var ctx = document.getElementById('medicamentsProposes').getContext('2d');
+var data = {
+	labels: labels,
+	datasets: [
+		{
+			data: [
+				'{{ medicamentsPresentesParMois["01"] }}',
+				'{{ medicamentsPresentesParMois["02"] }}',
+				'{{ medicamentsPresentesParMois["03"] }}',
+				'{{ medicamentsPresentesParMois["04"] }}',
+				'{{ medicamentsPresentesParMois["05"] }}',
+				'{{ medicamentsPresentesParMois["06"] }}',
+				'{{ medicamentsPresentesParMois["07"] }}',
+				'{{ medicamentsPresentesParMois["08"] }}',
+				'{{ medicamentsPresentesParMois["09"] }}',
+				'{{ medicamentsPresentesParMois["10"] }}',
+				'{{ medicamentsPresentesParMois["11"] }}',
+				'{{ medicamentsPresentesParMois["12"] }}'
+			],
+			backgroundColor: "#56dd85",
+			borderColor: "#5685ce",
+			borderWidth: 4
+		}
+	]
+};
+
+var options = {
+	responsive: true,
+	legend: {
+        display: false
+    },
+	scales: {
+        yAxes: [{
+            ticks: {
+                fontSize: 15,
+				precision: 0
+            }
+        }],
+		xAxes: [{
+            ticks: {
+                fontSize: 15
+            }
+        }]
+    }
+};
+
+var config = {
+	type: 'line',
+	data: data,
+	options: options
+};
+var medicamentsProposesChart = new Chart(ctx, config)
+
+
+
+
+//------------------- Médicaments offerts
+var ctx = document.getElementById('medicamentsOfferts').getContext('2d');
+var data = {
+	labels: labels,
+	datasets: [
+		{
+			data: [
+				'{{ medicamentsOffertsParMois["01"] }}',
+				'{{ medicamentsOffertsParMois["02"] }}',
+				'{{ medicamentsOffertsParMois["03"] }}',
+				'{{ medicamentsOffertsParMois["04"] }}',
+				'{{ medicamentsOffertsParMois["05"] }}',
+				'{{ medicamentsOffertsParMois["06"] }}',
+				'{{ medicamentsOffertsParMois["07"] }}',
+				'{{ medicamentsOffertsParMois["08"] }}',
+				'{{ medicamentsOffertsParMois["09"] }}',
+				'{{ medicamentsOffertsParMois["10"] }}',
+				'{{ medicamentsOffertsParMois["11"] }}',
+				'{{ medicamentsOffertsParMois["12"] }}'
+			],
+			backgroundColor: "#EE6C2B",
+			borderColor: "#5685ce",
+			borderWidth: 4
+		}
+	]
+};
+var config = {
+	type: 'line',
+	data: data,
+	options: options
+};
+var medicamentsOfferts = new Chart(ctx, config)
+
+
+
+//------------------- Coût médicaments offerts
+var ctx = document.getElementById('coutMedicamentsOfferts').getContext('2d');
+var data = {
+	labels: labels,
+	datasets: [
+		{
+			data: [
+				'{{ listeCoutsParMois["01"] }}',
+				'{{ listeCoutsParMois["02"] }}',
+				'{{ listeCoutsParMois["03"] }}',
+				'{{ listeCoutsParMois["04"] }}',
+				'{{ listeCoutsParMois["05"] }}',
+				'{{ listeCoutsParMois["06"] }}',
+				'{{ listeCoutsParMois["07"] }}',
+				'{{ listeCoutsParMois["08"] }}',
+				'{{ listeCoutsParMois["09"] }}',
+				'{{ listeCoutsParMois["10"] }}',
+				'{{ listeCoutsParMois["11"] }}',
+				'{{ listeCoutsParMois["12"] }}'
+			],
+			backgroundColor: "#F04C4C",
+			borderColor: "#5685ce",
+			borderWidth: 4
+		}
+	]
+};
+var config = {
+	type: 'line',
+	data: data,
+	options: options
+};
+var coutMedicamentsOfferts = new Chart(ctx, config)
+</script>

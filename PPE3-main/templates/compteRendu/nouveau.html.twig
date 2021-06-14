@@ -1,0 +1,81 @@
+{% extends "base.html.twig" %}
+{% block title %}GSB CR - Nouveau compte rendu{% endblock %}
+{% block body %}
+
+	<div class="row mt-5">
+		<div class="col-md-2"></div>
+		<div class="col-sm-12 col-md-8">
+
+			{% for message in app.flashes('notice') %}
+				<p class="alert alert-success">{{ message }}</p>
+			{% endfor %}
+
+			<h1>Création d'un nouveau compte-rendu</h1>
+			{{  form_start(form, { attr: { novalidate: 'novalidate' } }) }}
+
+			<div class="row mt-4">
+				<div class="col-sm-12 col-md-6">
+					<h5>Praticien visité :</h5>
+					{{ form_widget(form.praticien) }}
+					{{ form_errors(form.praticien) }}
+				</div>
+				<div class="col-sm-12 col-md-6">
+					<h5>Date de la visite :</h5>
+					{{ form_widget(form.dateVisite) }}
+					{{ form_errors(form.dateVisite) }}
+				</div>
+
+				<div class="col-sm-12 col-md-8 mt-4">
+					<h5>Motif de la visite :</h5>
+					{{ form_widget(form.motif) }}
+					{{ form_errors(form.motif) }}
+				</div>
+
+				<div class="col-sm-12 col-md-8 mt-4">
+					<h5>Bilan de la visite :</h5>
+					{{ form_widget(form.bilan) }}
+					{{ form_errors(form.bilan) }}
+				</div>
+
+				<div class="col-sm-12 col-md-12 mt-4">
+					<div class="presentation_container">
+						<div class="presentation">
+							<div class="medicament_field">
+								<h5>Médicament :</h5>
+								{{ form_widget(form.presentation.0.medicament) }}
+								{{ form_errors(form.presentation.0.medicament) }}
+							</div>
+							<div class="quantite_field">
+								<h5>Quantité offerte :</h5>
+								{{ form_widget(form.presentation.0.quantiteOfferte) }}
+								{{ form_errors(form.presentation.0.quantiteOfferte) }}
+							</div>
+						</div>
+					</div>
+				</div>
+
+					{{ form_rest(form.presentation) }}
+				
+				<div class="col-sm-12 col-md-12 mt-4">
+					<a href="#" class="add_field" id="add_field">Ajouter</a>
+				</div>
+
+				<div class="col-md-12 text-center mt-5">
+					<input type="submit" class="btn btn-lg btn-secondary">
+				</div>
+			</div>
+			{{ form_end(form) }}
+		</div>
+	</div>
+			
+{% endblock %}
+
+
+{% block javascripts %}
+
+	{{ parent() }}
+	<script src="{{ asset('js/add_field.js') }}" defer></script>
+
+{% endblock %}
+
+

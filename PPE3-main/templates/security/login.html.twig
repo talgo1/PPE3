@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}GSB CR - Connexion{% endblock %}
+        </title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        {% endblock %}
+    </head>
+    <body>
+
+        <div class="login_container">
+            <div class="logo_login">
+                <img src="{{ asset('images/logo_gsb.png') }}" alt="Logo GSB">
+            </div>
+            <form action="{{ path('security.login') }}" method="post" class="login_form">
+            
+                <h1>Identifiez-vous</h1>
+                <div class="text_login">
+                    <div class="placeholder">Login</div>
+                    <input type="text" value="{{ last_username }}" name="username" id="input_username" required>
+                </div>
+                
+                <div class="text_login">
+                    <input type="password" name="password" id="inputPassword" required>
+                    <div class="placeholder">Mot de passe</div>
+                    <div id="togglePassword" class="show_password">AFFICHER</div>
+                </div>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                <div class="button_container">
+                    <button class="button" type="submit">Connexion</button>
+                </div>
+
+                {% if error %}
+                    <div class="login_error">
+                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                    </div>
+                {% endif %}
+            </form>
+        </div>
+    </body>
+</html>
+
+<script src="{{ asset('js/show_password.js') }}" defer></script>
+
